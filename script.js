@@ -45,6 +45,28 @@ async function fetchShows() {
   ));
 
   generateIndex(shows);
+  generateShowPages(shows);
+}
+
+function generateShowPages(shows) {
+  shows.slice(0, 50).forEach(show => {
+    const html = `
+    <html>
+    <head>
+      <title>${show.name}</title>
+    </head>
+    <body>
+      <h1>${show.name}</h1>
+      <img src="${show.image}" />
+      <div>${show.summary}</div>
+      <br>
+      <a href="index.html">← Volver</a>
+    </body>
+    </html>
+    `;
+
+    fs.writeFileSync(`show-${show.id}.html`, html);
+  });
 }
 
 fetchShows();
