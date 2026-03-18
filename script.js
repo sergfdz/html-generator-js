@@ -21,7 +21,7 @@ function generateIndex(shows) {
   `;
 
   shows.slice(0, 50).forEach(show => {
-    html += `<li>${show.name}</li>`;
+    html += `<li><a href="show-${show.id}.html">${show.name}</a></li>`;
   });
 
   html += `
