@@ -11,7 +11,14 @@ async function fetchShows() {
   const response = await fetch("https://api.tvmaze.com/shows");
   const data = await response.json();
 
-  console.log(data.slice(0, 5));
+  const shows = data.map(show => new Show(
+    show.id,
+    show.name,
+    show.image?.medium,
+    show.summary
+  ));
+
+  console.log(shows.slice(0, 5));
 }
 
 fetchShows();
