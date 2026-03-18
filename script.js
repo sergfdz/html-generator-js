@@ -14,6 +14,7 @@ function generateIndex(shows) {
   <html>
   <head>
     <title>Shows</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <h1>Lista de Shows</h1>
@@ -54,6 +55,7 @@ function generateShowPages(shows) {
     <html>
     <head>
       <title>${show.name}</title>
+      <link rel="stylesheet" href="styles.css">
     </head>
     <body>
       <h1>${show.name}</h1>
